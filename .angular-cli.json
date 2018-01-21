@@ -1,0 +1,10 @@
+{
+    "apps": [{
+        "root": "src",
+        "outDir": "dist"
+    }],
+    "defaults": {
+        "styleExt": "scss",
+        "component": {}
+    }
+}

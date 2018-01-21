@@ -1,0 +1,48 @@
+{
+  "name": "ng-bootstrap",
+  "version": "0.1.0",
+  "description": "bootstrap",
+  "main": "main.ts",
+  "repository": "https://github.com/Modem56k/ng-bootstrap.git",
+  "author": "Modem56k",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prestart": "rimraf dist .fusebox && cpx ./src/index.html ./dist/",
+    "start": "node ./fuse.ts",
+    "lint": "tslint .",
+    "test": "node ./fuse.ts test"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.6.5",
+    "@angular/language-service": "^5.2.1",
+    "@types/node": "^9.3.0",
+    "codelyzer": "^4.1.0",
+    "cpx": "^1.5.0",
+    "fuse-box": "^3.0.2",
+    "fuse-test-runner": "^1.0.16",
+    "node-sass": "^4.7.2",
+    "rimraf": "^2.6.2",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@angular/animations": "^5.2.1",
+    "@angular/cdk": "^5.1.0",
+    "@angular/common": "^5.2.1",
+    "@angular/compiler": "^5.2.1",
+    "@angular/core": "^5.2.1",
+    "@angular/forms": "^5.2.1",
+    "@angular/http": "^5.2.1",
+    "@angular/material": "^5.1.0",
+    "@angular/platform-browser": "^5.2.1",
+    "@angular/platform-browser-dynamic": "^5.2.1",
+    "@angular/router": "^5.2.1",
+    "@uirouter/angular": "^1.0.0-rc.3",
+    "core-js": "^2.5.3",
+    "hammerjs": "^2.0.8",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.20"
+  }
+}
