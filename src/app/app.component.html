@@ -1,3 +1,27 @@
-<p>
-  app works!
-</p>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" style="width:250px">
+    <mat-toolbar class="docs-navbar-header" color="primary" class="mat-elevation-z6"></mat-toolbar>
+    <mat-nav-list>
+      <!-- [uiSref]="item.Route" -->
+      <mat-list-item uiSrefActive="active" uiSrefActive="active" *ngFor="let item of links; let i = index">
+        <mat-icon matListIcon>{{item.Icon}}</mat-icon>
+        <a matLine [href]="item.Route">{{ item.Name }}</a>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="docs-navbar-header" color="primary" class="mat-elevation-z6">
+      <button type="button" mat-icon-button (click)="opened = !opened">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Applications</span>
+    </mat-toolbar>
+
+    <!-- sample actions -->
+    <sideMenu></sideMenu>
+    <sample></sample>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

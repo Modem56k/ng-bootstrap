@@ -1,5 +1,5 @@
 const { FuseBox, WebIndexPlugin, JSONPlugin, HTMLPlugin, SassPlugin, CSSPlugin, RawPlugin, Sparky, QuantumPlugin } = require('fuse-box');
-
+const { Ng2TemplatePlugin } = require('ng2-fused');
 let fuse, app, vendor, pollyfills, glob, isProduction;
 
 Sparky.task('config', () => {
@@ -7,19 +7,22 @@ Sparky.task('config', () => {
         homeDir: `src`,
         output: `dist/$name.js`,
         target: 'browser',
+        sourceMaps: { inline: true },
         plugins: [
-            WebIndexPlugin({
-                title: 'FuseBox + Angular',
-                template: 'src/index.html',
-            }),
-            ['*.component.scss', RawPlugin()],
-            [SassPlugin(), CSSPlugin()],
-            CSSPlugin(),
+            Ng2TemplatePlugin(),
+            ['*.component.html', RawPlugin()],
+            ['*.component.scss', SassPlugin({ outputStyle: 'compressed', importer: true }), RawPlugin(), CSSPlugin({
+                outFile: (file) => `dist/styles/${file}`, inject: (file) => `styles/${file}`
+            })],
+            ['main.scss', SassPlugin({ outputStyle: 'compressed', importer: true }),
+                CSSPlugin({ outFile: (file) => `dist/styles/${file}`, inject: (file) => `styles/${file}` })],
+            ['*.scss', SassPlugin({ outputStyle: 'compressed', importer: true }),
+                CSSPlugin({ outFile: (file) => `dist/${file}` })],
+            WebIndexPlugin({ title: 'FuseBox + Angular', template: 'src/index.html' }),
             JSONPlugin(),
             HTMLPlugin({
                 useDefault: false,
             }),
-            // http://fuse-box.org/page/quantum
             isProduction && QuantumPlugin({
                 uglify: true,
                 hoisting: { names: ['tslib_1'] },
@@ -35,7 +38,6 @@ Sparky.task('config', () => {
         .instructions('~ main.ts');
 
     app = fuse.bundle('app')
-        .sourceMaps({ inline: true })
         .instructions('!> [main.ts]');
 });
 

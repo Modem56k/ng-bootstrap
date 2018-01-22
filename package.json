@@ -21,6 +21,7 @@
     "cpx": "^1.5.0",
     "fuse-box": "^3.0.2",
     "fuse-test-runner": "^1.0.16",
+    "ng2-fused": "^0.5.1",
     "node-sass": "^4.7.2",
     "rimraf": "^2.6.2",
     "ts-node": "^4.1.0",
