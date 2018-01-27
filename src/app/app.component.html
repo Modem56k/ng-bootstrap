@@ -3,9 +3,9 @@
     <mat-toolbar class="docs-navbar-header" color="primary" class="mat-elevation-z6"></mat-toolbar>
     <mat-nav-list>
       <!-- [uiSref]="item.Route" -->
-      <mat-list-item uiSrefActive="active" uiSrefActive="active" *ngFor="let item of links; let i = index">
+      <mat-list-item [uiSref]="item.Route" uiSrefActive="active" uiSrefActive="active" *ngFor="let item of links; let i = index">
         <mat-icon matListIcon>{{item.Icon}}</mat-icon>
-        <a matLine [href]="item.Route">{{ item.Name }}</a>
+        <a matLine>{{ item.Name }}</a>
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-nav-list>
@@ -16,12 +16,11 @@
       <button type="button" mat-icon-button (click)="opened = !opened">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>My Applications</span>
+      <span>{{title}}</span>
     </mat-toolbar>
 
-    <!-- sample actions -->
     <sideMenu></sideMenu>
-    <sample></sample>
+    <ui-view></ui-view>
 
   </mat-sidenav-content>
 </mat-sidenav-container>

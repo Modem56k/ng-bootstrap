@@ -1,10 +1,21 @@
+import { IDomainModel } from './domain';
 export interface IDomainModel {
   Id: string;
   Name: string;
 }
 
-export interface IProcedure {
+export interface IViewModel {
+  Title: string;
+}
+
+export class IProcedure implements IDomainModel {
+  Id: string;
   Name: string;
+}
+
+export class Link {
+  constructor(public name: string, public route: string, public icon: string) {
+  }
 }
 
 /**

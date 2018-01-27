@@ -9,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public opened: boolean;
   public links: Array<Link> = [];
+  public title = 'My App';
   constructor() { }
 
   ngOnInit() {
-    this.links.push({ Name: 'Home', Icon: 'home', Route: '#' });
-    this.links.push({ Name: 'Payroll', Icon: 'account_balance', Route: '#' });
-    this.links.push({ Name: 'Cash', Icon: 'Cat', Route: '#' });
-    this.links.push({ Name: 'Cash', Icon: 'Cat', Route: '#' });
+    this.links.push({ Name: 'Home', Icon: 'home', Route: 'home' });
+    this.links.push({ Name: 'Payroll', Icon: 'account_balance', Route: 'sample' });
+    this.links.push({ Name: 'Change', Icon: 'bookmark', Route: 'change' });
+    this.links.push({ Name: 'Cash', Icon: 'class', Route: '#' });
   }
 
 }

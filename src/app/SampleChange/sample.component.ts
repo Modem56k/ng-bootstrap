@@ -7,7 +7,7 @@ import * as messages from '../../model/MessageServiceClass';
     selector: 'sample',
     templateUrl: './sample.component.html'
 })
-export default class SampleComponent {
+export default class SampleChangeComponent {
     id: any = 3;
     newValue: any = 3;
     _name: any = 3;
