@@ -1,3 +1,4 @@
+import { HeaderModule } from 'host-models';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,8 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

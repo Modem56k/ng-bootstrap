@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "Host"
+		},
+		{
+			"path": "Host.Models"
+		}
+	],
+	"settings": {
+		"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+		"workbench.editor.labelFormat": "medium",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+		"tslint.autoFixOnSave": true,
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	}
+}
