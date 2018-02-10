@@ -2,9 +2,9 @@
 
 
 # compiled output
-/dist
-/tmp
-/out-tsc
+dist
+tmp
+out-tsc
 
 # dependencies
 node_modules
@@ -26,7 +26,8 @@ node_modules
 # .vscode/extensions.json
 
 # FUSEBOX 
-.fusebox/*
+.fusebox
+.vscode
 
 # misc
 /.sass-cache

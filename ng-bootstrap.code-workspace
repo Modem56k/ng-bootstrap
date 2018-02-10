@@ -1,10 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "Host"
+			"path": "Client.Web"
 		},
 		{
 			"path": "Host.Models"
+		},
+		{
+			"path": "Message.Service"
+		},
+		{
+			"path": "ResourceAccess"
+		},		
+		{
+			"path": "ResourceAccess.LocalStorage"
 		}
 	],
 	"settings": {
@@ -13,6 +22,18 @@
 		"files.autoSave": "afterDelay",
 		"files.autoSaveDelay": 5000,
 		"tslint.autoFixOnSave": true,
+		"git.ignoreLimitWarning": true,
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/dist": true,
+			"**/.fusebox": true,
+			"**/.vscode": true,
+			"**/node_modules": false,
+		}
 	},
 	"launch": {
 		"configurations": [],

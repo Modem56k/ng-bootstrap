@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPerson } from 'host-models';
 
 @Component({
   selector: 'app',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  private person: IPerson;
 
   constructor() { }
 
