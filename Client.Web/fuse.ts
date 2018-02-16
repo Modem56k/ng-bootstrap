@@ -31,9 +31,10 @@ Sparky.task('config', () => {
   });
 
   pollyfills = fuse.bundle('pollyfills')
-    .instructions(' > pollyfills.ts');
+    .instructions('> pollyfills.ts');
 
   vendor = fuse.bundle('vendor')
+    .sourceMaps({ inline: true })
     .instructions('~ main.ts');
 
   app = fuse.bundle('app')

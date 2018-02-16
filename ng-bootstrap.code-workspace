@@ -11,9 +11,12 @@
 		},
 		{
 			"path": "ResourceAccess"
-		},		
+		},
 		{
-			"path": "ResourceAccess.LocalStorage"
+			"path": "ResourceAccess.Ng.Shm"
+		},
+		{
+			"path": "Message.Service.Ng.Shm"
 		}
 	],
 	"settings": {

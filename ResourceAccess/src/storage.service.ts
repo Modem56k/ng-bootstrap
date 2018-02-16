@@ -3,18 +3,18 @@ import * as _ from 'lodash';
 export class StorageService {
     private localStorageSupported: boolean;
 
-    constructor() {
-        this.localStorageSupported = typeof window != "undefined" && typeof window['localStorage'] != "undefined" && window['localStorage'] != null;
-    }
+    constructor(private storage: Storage) {
+        this.localStorageSupported = typeof storage != "undefined";
+     }
 
     AddOrUpdate<T>(item: T): void {
-        var storage = this.retreiveStorage(item.constructor.name);
+        var storage = this.retreiveStorage(item.constructor.name) || [];
         var existing = _.find(storage, o => o['Id'] === item['Id']);
         if (existing) {
             _.remove(storage, o => o['Id'] == item['Id']);
         }
         storage.push(item);
-        localStorage.setItem(item.constructor.name, JSON.stringify(storage));
+        this.storage.setItem(item.constructor.name, JSON.stringify(storage));
     }
 
     Delete<T>(item: T): void {
@@ -22,7 +22,7 @@ export class StorageService {
         var existing = _.find(storage, o => o['Id'] === item['Id']);
         if (existing) {
             _.remove(storage, o => o['Id'] == item['Id']);
-            localStorage.setItem(item.constructor.name, JSON.stringify(storage));
+            this.storage.setItem(item.constructor.name, JSON.stringify(storage));
             return;
         }
         throw new Error('Item does not exist');
@@ -38,10 +38,10 @@ export class StorageService {
         return <T[]>storage.filter(callback);
     }
 
-    private retreiveStorage<T>(obj: string): T[] {
+    private retreiveStorage<T>(name: string): T[] {
         if (!this.localStorageSupported) {
             throw new Error("No local storage support");
         }
-        return JSON.parse(localStorage.getItem(obj));
+        return JSON.parse(this.storage.getItem(name));
     }
 }
