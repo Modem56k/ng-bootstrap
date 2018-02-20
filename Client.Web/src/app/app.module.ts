@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { StorageService } from 'resource-access';
 
 @NgModule({
   declarations: [AppComponent],
@@ -10,7 +9,7 @@ import { StorageService } from 'resource-access';
     CommonModule,
     BrowserModule,
   ],
-  providers: [StorageService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
