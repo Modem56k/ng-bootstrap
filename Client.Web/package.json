@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "prestart": "rimraf dist .fusebox && cpx ./src/index.html ./dist/",
-    "start": "yarn upgrade host-models resource-access",
+    "start": "yarn upgrade host-models storage-service",
     "poststart": "node ./fuse.ts",
     "lint": "tslint .",
     "test": "node ./fuse.ts test"
@@ -46,6 +46,7 @@
     "hammerjs": "^2.0.8",
     "host-models": "../Host.Models/",
     "rxjs": "^5.5.6",
+    "storageservice.ng.shm": "file:../StorageService.Ng.Shm",
     "uuid": "^3.2.1",
     "zone.js": "^0.8.20"
   }

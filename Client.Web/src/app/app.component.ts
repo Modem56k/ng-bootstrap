@@ -1,8 +1,8 @@
+import { StorageService } from 'storageservice.ng.shm';
 import { IPerson } from 'host-models';
 import { v4 as uuid } from 'uuid';
 
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from 'resource-access';
 @Component({
   selector: 'app',
   templateUrl: './app.component.html',
@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   private person: IPerson;
 
   constructor(private storageService: StorageService) {
-
   }
 
   ngOnInit() { }
