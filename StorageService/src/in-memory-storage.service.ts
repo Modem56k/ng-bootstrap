@@ -1,5 +1,3 @@
-import { IDictionary } from './resource-access.service';
-
 export class InMemoryStorage implements Storage {
   [index: number]: string;
   [key: string]: any;

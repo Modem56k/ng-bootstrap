@@ -7,16 +7,16 @@
 			"path": "Host.Models"
 		},
 		{
-			"path": "Message.Service"
+			"path": "MessageService"
 		},
 		{
-			"path": "ResourceAccess"
+			"path": "StorageService"
 		},
 		{
-			"path": "ResourceAccess.Ng.Shm"
+			"path": "StorageService.Ng.Shm"
 		},
 		{
-			"path": "Message.Service.Ng.Shm"
+			"path": "MessageService.Ng.Shm"
 		}
 	],
 	"settings": {
@@ -32,7 +32,7 @@
 			"**/.hg": true,
 			"**/CVS": true,
 			"**/.DS_Store": true,
-			"**/dist": true,
+			"**/dist": false,
 			"**/.fusebox": true,
 			"**/.vscode": true,
 			"**/node_modules": false,
